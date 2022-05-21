@@ -13,7 +13,7 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
+		
 		System.out.print("Room number: ");
 		int number = sc.nextInt();
 		System.out.print("Check-in date (dd/MM/yyyy): ");
@@ -34,7 +34,7 @@ public class Program {
 			checkIn = sdf.parse(sc.next());
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			checkOut = sdf.parse(sc.next());
-
+			
 			String error = reservation.updateDates(checkIn, checkOut);
 			if (error != null) {
 				System.out.println("Error in reservation: " + error);
@@ -42,11 +42,8 @@ public class Program {
 			else {
 				System.out.println("Reservation: " + reservation);
 			}
-		
 		}
 
 		sc.close();
-
 	}
-
 }
